@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
           cart[new_name][:count] += 1
         end
         
-        cart.delete(coup[:item])
+        cart[coup[:item]][:count] -= coup[:num]
         
       end
     end

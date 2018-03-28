@@ -14,7 +14,12 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  # code here
+  result = cart
+  coupons.each do |coup|
+    if result.has_key?(coup[:item])
+      if result[coup[:item]][:count] == coup[:count]
+    end
+  end
 end
 
 def apply_clearance(cart)

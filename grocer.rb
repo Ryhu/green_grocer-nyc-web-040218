@@ -18,7 +18,7 @@ def apply_coupons(cart, coupons)
     # exists?
     if cart.has_key?(coup[:item])
       #has enough for one coup?
-      if cart[coup[:item]][:count] == coup[:num]
+      if cart[coup[:item]][:count] >= coup[:num]
         new_name = "#{coup[:item]} W/COUPON"
         #if coup already exists
         if !cart.has_key?(new_name)

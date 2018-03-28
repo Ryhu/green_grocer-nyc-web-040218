@@ -21,7 +21,8 @@ def apply_coupons(cart, coupons)
       #has enough for one coup?
       if result[coup[:item]][:count] == coup[:count]
         new_name = "#{coup[:item]} W/COUPON"
-        result[new_name] = HASH
+        result[new_name] = Hash[:price, coup[:cost], :clearance,
+                                ]
         result[new_name][:price] = coup[:cost]
         result[new_name][:clearance] = true
         result[new_name][:count] = 1

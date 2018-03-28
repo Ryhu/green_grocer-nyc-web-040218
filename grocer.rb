@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
         #if coup already exists
         if !cart.has_key?(new_name)
           cart[new_name] = Hash[:price, coup[:cost],
-                                  :clearance, true, 
+                                  :clearance, false, 
                                   :count, 1 ]
         else
           cart[new_name][:count] += 1

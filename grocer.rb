@@ -5,6 +5,8 @@ def consolidate_cart(cart)
       if !result.has_key?(item_name)
         result[item_name] = item_des
         result[item_name][:count] = 1
+      else
+        result[item_name][:count] += 1
       end
     end
   end

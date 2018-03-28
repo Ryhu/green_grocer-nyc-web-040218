@@ -28,7 +28,8 @@ def apply_coupons(cart, coupons)
         else
           cart[new_name][:count] += 1
         end
-          
+        
+        cart.delete(coup[:item])
         
       end
     end

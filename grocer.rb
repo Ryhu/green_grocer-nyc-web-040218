@@ -14,27 +14,26 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  result = cart
   coupons.each do |coup|
     # exists?
-    if result.has_key?(coup[:item])
+    if cart.has_key?(coup[:item])
       #has enough for one coup?
-      if result[coup[:item]][:count] == coup[:count]
+      if cart[coup[:item]][:count] == coup[:count]
         new_name = "#{coup[:item]} fW/COUPON"
         #if coup already exists
-        if !result.has_key?(new_name)
-          result[new_name] = Hash[:price, coup[:cost],
+        if !cart.has_key?(new_name)
+          cart[new_name] = Hash[:price, coup[:cost],
                                   :clearance, true, 
                                   :count, 1 ]
         else
-          result[new_name][:count] += 1
+          cart[new_name][:count] += 1
         end
           
         
       end
     end
   end
-  return result
+  return cart
 end
 
 def apply_clearance(cart)

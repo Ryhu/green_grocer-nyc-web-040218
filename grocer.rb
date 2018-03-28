@@ -16,8 +16,13 @@ end
 def apply_coupons(cart, coupons)
   result = cart
   coupons.each do |coup|
+    # exists?
     if result.has_key?(coup[:item])
+      #has enough for one coup?
       if result[coup[:item]][:count] == coup[:count]
+        new_name = "#{coup[:item]} W/COUPON"
+        result[]
+      end
     end
   end
 end

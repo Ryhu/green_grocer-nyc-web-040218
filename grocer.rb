@@ -19,15 +19,17 @@ def apply_coupons(cart, coupons)
     # exists?
     if result.has_key?(coup[:item])
       #has enough for one coup?
-      if result[coup[:item]][:count] == coup[:count]
+      if result[coup[:item]][:count] >= coup[:count]
         new_name = "#{coup[:item]} W/COUPON"
-        if !result.has_key?(coup[])
-          
+        #if coup already exists
+        if !result.has_key?(new_name)
+          result[new_name] = Hash[:price, coup[:cost],
+                                  :clearance, true, 
+                                  :count, 1 ]
+        else
+          result[new_name][:count] += 1
         end
-        new_name = "#{coup[:item]} W/COUPON"
-        result[new_name] = Hash[:price, coup[:cost],
-                                :clearance, true, 
-                                :count, 1 ]
+          
         
       end
     end

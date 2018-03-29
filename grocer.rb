@@ -54,4 +54,5 @@ def checkout(cart, coupons)
   cart3.each do |key, val|
     result += (val[:count] * val[:price] )
   end
+  return price
 end

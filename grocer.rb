@@ -43,6 +43,7 @@ def apply_clearance(cart)
       item_atts *= 0.8
     end
   end
+  return cart
 end
 
 def checkout(cart, coupons)

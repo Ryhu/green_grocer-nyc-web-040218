@@ -39,7 +39,9 @@ end
 
 def apply_clearance(cart)
   cart.each do |item_name, item_atts|
-    
+    if item_atts[:clearance]
+      item_atts *= 0.8
+    end
   end
 end
 
